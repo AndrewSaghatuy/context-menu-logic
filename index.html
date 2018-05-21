@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Context menu</title>
+</head>
+<style>
+    ul {
+        position: absolute;
+        list-style: none;
+        background: #f7f5f5;
+        padding: 0;
+        margin: 0;
+    }
+    ul li {
+        position: relative;
+        display: -webkit-box;
+        cursor: pointer;
+        padding: 5px 15px;
+        border-bottom: 1px solid #fff;
+    }
+    ul li:hover {
+        background: #ececec;
+    }
+    li > ul {
+        display: none;
+        width: 100%;
+    }
+    ul li.submenu:before {
+        content: '\25b6';
+        position: absolute;
+        float: right;
+        right: 5px;
+        font-size: 10px;
+        line-height: 18px;
+    }
+
+    li.submenu > ul {
+        position: absolute;
+        top: 0;
+        left: 100%;
+    }
+
+    ul a.arrow {
+        position: relative;
+        float: left;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 10px;
+        background: #dadada;
+        cursor: pointer;
+        z-index: 999;
+        text-align: center;
+    }
+
+    ul a.arrow.top:before, ul a.arrow.bottom:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        line-height: 10px;
+        font-size: 12px;
+    }
+
+    ul a.arrow.top:before {
+        content: '\25b2';
+    }
+
+    ul a.arrow.bottom:before {
+        content: '\25bc';
+    }
+</style>
+<body>
+
+<h1>Please click on this picture</h1>
+
+<div id="context_menu" style="width: 300px; margin: 0 auto;">
+    <img src="my_brother.jpg" style="width: 100%;">
+</div>
+
+<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
